@@ -1,0 +1,32 @@
+﻿@*@using Microsoft.AspNet.Identity*@
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Rate Ordered Item:</div>
+        <div class="panel-body">
+@using (Html.BeginForm("ViewBooks", "Home", FormMethod.Post))
+{
+            <dl class="dl-horizontal">
+                <dt>
+                    <span>Rate:</span>
+                </dt>
+
+                <dd>
+                    
+                        <select name="searchBy" class="form-control">
+                            <option value="0" selected>1</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                            <option value="4">5</option>
+                        </select>
+                        
+                    <span>
+                        <input type="submit" value="Rate" class="btn btn-info btn-sm" />
+                        <!--/form  -->
+                    </span>
+                </dd>
+            </dl>
+}
+               
+</div>
+</div>

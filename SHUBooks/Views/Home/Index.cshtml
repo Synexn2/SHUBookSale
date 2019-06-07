@@ -1,0 +1,50 @@
+﻿@model SHUBooks.Models.BestSeller
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <img src="~/uploads/logo.gif" />
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        @Html.Partial("TopTenRate")
+    </div>
+    <!--div class="col-md-4">
+       
+        
+    </!--div>--> 
+    <div class="col-md-4">
+        <!--    Call the Search Form   -->
+        @Html.Partial("SearchForm")
+        
+        <div class="panel panel-default">
+            <div class="panel-heading">Top 10 Selling Books:</div>
+            <div class="panel-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Book Title</th>
+                            <th>No. Sold</th>
+                        </tr>
+                        @foreach (var item in (IEnumerable<SHUBooks.Models.BestSeller>)ViewBag.BSeller)
+                        {
+                            <tr>
+                                <td>@item.Title</td>
+                                <td>@item.Total</td>
+                            </tr>
+                        }
+                    </table>
+            </div>
+        </div>
+    </div>
+    
+    <!--div class="col-md-12">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        
+    </!--div>-->
+    
+</div>
